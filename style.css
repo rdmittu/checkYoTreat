@@ -8,7 +8,6 @@ box-sizing: border-box;
 }
 
 body {
-align-content: center;  
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
 }
@@ -23,7 +22,7 @@ padding: 1em;
 
 #treat {
 background-image: url('images/treatBackground.jpg');
-align-content: center;
+text-align: center;
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
@@ -51,6 +50,7 @@ margin: 20px auto;
 .info{
 background-color: rgba(255, 255, 255, 0.6);
 width: fit-content;
+margin: auto;
 }
 
 p{
