@@ -20,9 +20,9 @@ function treatCheck() {
   var truerate = (dep-purch-withd)/3;
 
   if(truerate > rate) {
-    window.location.href ="treat.html?need="+rate+"&goalM="+info.elements[2].value+"&goalD="+info.elements[2].value+"&tRate="+truerate;
+    return "treat.html?need="+rate+"&goalM="+info.elements[2].value+"&goalD="+info.elements[3].value+"&tRate="+truerate;
   } else {
-    window.location.href = "noTreat.html?need="+rate+"&goalM="+info.elements[2].value+"&goalD="+info.elements[2].value+"&tRate="+truerate;
+    return "noTreat.html?need="+rate+"&goalM="+info.elements[2].value+"&goalD="+info.elements[3].value+"&tRate="+truerate;
   }
 
   return false;
