@@ -45,11 +45,16 @@ padding: 1em;
 
 h1 {
 width: fit-content;
-text-align: center;
 font-size: 500%;
 color: #3366ff;
-/*text-shadow: 1px 1px 0 #bbbbbb;*/
- text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+margin: auto;
+}
+
+h3 {
+width: fit-content;
+color: #e74c3c;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 margin: auto;
 }
 
