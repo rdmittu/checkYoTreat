@@ -44,12 +44,12 @@ padding: 1em;
 }
 
 h1 {
-background-color: rgba(255, 255, 255, 0.4);
 width: fit-content;
 text-align: center;
 font-size: 500%;
 color: #3366ff;
-text-shadow: 1px 1px 0 #e1e1e1;
+/*text-shadow: 1px 1px 0 #bbbbbb;*/
+ text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 margin: auto;
 }
 
