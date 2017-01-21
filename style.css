@@ -15,6 +15,14 @@ font-family: 'Merriweather', sans-serif;
 padding: 1em;
 }
 
+#treat {
+    background-image: url('images/treatBackground.jpg');
+background-repeat: no-repeat;
+background-size: 100%, 100%;
+font-family: 'Merriweather', sans-serif;
+padding: 1em;
+}
+
 html{
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
@@ -68,6 +76,10 @@ box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
 
 form textarea {
 height: 126px;
+}
+
+img {
+    align-self: center;
 }
 
 .half {
