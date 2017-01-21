@@ -2,6 +2,7 @@ var curDepositAmount;
 var id;
 var acc;
 var balance;
+var rate;
 
 
 function treatCheck() {
@@ -10,9 +11,26 @@ function treatCheck() {
   acc = getAccount(id);
 
   //Now we calculate how much the person needs to save
-  if (info.elements[2].value < balance) {
+  if (info.elements[2].value > balance) {
+    //calculate home much time they have
+    var re = /(\d\d)\/(\d\d)\/(\d\d\d\d)/;
+    var result = re.exec(info.elements[3].value);
+    var goalDate = new Date(result[3], (result[2]-1), result[1]);
+    var curDate = new Date();
+    if (goalDate < curDate) {
+      //Your goal is in the past
+      new Error();
+    }
+    //Find number of days before goal
+    var diffTime = Math.round(Math.abs((goalDate.getTime() - curDate.getTime())/(24*60*60*1000)));
+    //Find rate you need to be saving money.
+    rate = (info.elements[2].value - balance)/(diffTime/7);
+
+    //Now we need to check to see if they have been saving enough
     
+
   }
+
 
 }
 
