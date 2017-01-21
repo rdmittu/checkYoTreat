@@ -14,9 +14,9 @@ padding: 1em;
 }
 
 #check {
-    background-image: url('images/background.jpg');
+background-image: url('images/background.jpg');
 background-repeat: no-repeat;
-background-size: 100%, 100%;
+background-size: 90%, 90%;
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
 }
