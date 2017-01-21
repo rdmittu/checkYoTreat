@@ -1,8 +1,7 @@
 var curDepositAmount;
 var id;
 var acc;
-var balance;
-var rate;
+var balance = null;
 
 
 function treatCheck() {
@@ -11,37 +10,22 @@ function treatCheck() {
   acc = getAccount(id);
 
   //Now we calculate how much the person needs to save
-  if (info.elements[2].value > balance) {
-    //calculate home much time they have
-    var re = /(\d\d)\/(\d\d)\/(\d\d\d\d)/;
-    var result = re.exec(info.elements[3].value);
-    var goalDate = new Date(result[3], (result[2]-1), result[1]);
-    var curDate = new Date();
-    if (goalDate < curDate) {
-      //Your goal is in the past
-      new Error();
-    }
-    //Find number of days before goal
-    var diffTime = Math.round(Math.abs((goalDate.getTime() - curDate.getTime())/(24*60*60*1000)));
-    //Find rate you need to be saving money.
-    rate = (info.elements[2].value - balance)/(diffTime/7);
+  var rate = getRate(info);
+  //Now we need to check to see if they have been saving enough
+  var dep = getDepositRate(acc);
+  var purch = getPurchRate(acc);
+  var withd = getWithRate(acc);
 
-    //Now we need to check to see if they have been saving enough
-    
+  var truerate = (dep-purch-withd)/3;
 
+  if(truerate > rate) {
+    return "treat.html";
+  } else {
+    return "noTreat.html"
   }
 
 
 }
-
-function loadJSON(url, callback) {
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.overrideMimeType("application/json");
-  xmlHttp.open("GET", url, true);
-  xmlHttp.send(null);
-  var message = JSON.parse(xmlHttp.responseText);
-  return message;
- }
 
 function getId(username) {
   var xmlHttp = new XMLHttpRequest();
@@ -61,13 +45,93 @@ function getAccount(id) {
   var message = JSON.parse(xmlHttp.responseText);
   var account = message.pop();
   balance = account.balance;
-  return account.customer_id;
+  return account._id;
 }
 
-function getDepositCurrent(id) {
-
+function getRate(info) {
+  if (info.elements[2].value > balance) {
+    //calculate home much time they have
+    var re = /(\d\d)\/(\d\d)\/(\d\d\d\d)/;
+    var result = re.exec(info.elements[3].value);
+    var goalDate = new Date(result[3], (result[1]-1), result[2]);
+    var curDate = new Date();
+    if (goalDate < curDate) {
+      //Your goal is in the past
+      new Error();
+    }
+    //Find number of days before goal
+    var diffTime = Math.round(Math.abs((goalDate.getTime() - curDate.getTime())/(24*60*60*1000)));
+    //Find rate you need to be saving money.
+    return (info.elements[2].value - balance)/(diffTime/7);
+  }
+  else {
+    //You have too much money
+    new Error();
+  }
 }
 
-function calcSavings() {
+function getDepositRate(acc) {
+  var dep=0;
+  var xmlHttp = new XMLHttpRequest();
+  var url = "http://api.reimaginebanking.com/accounts/"+acc+"/deposits?key=0f35e6aabd46897e9b0185a67a566d65"
+  xmlHttp.overrideMimeType("application/json");
+  xmlHttp.open("GET", url, true);
+  xmlHttp.send(null);
+  var message = JSON.parse(xmlHttp.responseText);
+  var threeweeks = new Date();
+  threeweeks.setDate(threeweeks.getDate()-21);
+  for (var i = 0; i < message.length; i++) {
+    var currentmess = message[i];
+    var re = /(\d\d\d\d)-(\d\d)-(\d\d)/;
+    var result = re.exec(currentmess.transaction_date);
+    var depdate = new Date(result[1], (result[2]-1), result[3]);
+    if(depdate > threeweeks) {
+      dep += currentmess.amount
+    }
+  }
+  return dep;
+}
 
+function getPurchRate(acc) {
+  var dep=0;
+  var xmlHttp = new XMLHttpRequest();
+  var url = "http://api.reimaginebanking.com/accounts/"+acc+"/purchases?key=0f35e6aabd46897e9b0185a67a566d65"
+  xmlHttp.overrideMimeType("application/json");
+  xmlHttp.open("GET", url, true);
+  xmlHttp.send(null);
+  var message = JSON.parse(xmlHttp.responseText);
+  var threeweeks = new Date();
+  threeweeks.setDate(threeweeks.getDate()-21);
+  for (var i = 0; i < message.length; i++) {
+    var currentmess = message[i];
+    var re = /(\d\d\d\d)-(\d\d)-(\d\d)/;
+    var result = re.exec(currentmess.transaction_date);
+    var depdate = new Date(result[1], (result[2]-1), result[3]);
+    if(depdate > threeweeks) {
+      dep += currentmess.amount
+    }
+  }
+  return dep;
+}
+
+function getWithRate(acc) {
+  var dep=0;
+  var xmlHttp = new XMLHttpRequest();
+  var url = "http://api.reimaginebanking.com/accounts/"+acc+"/withdrawals?key=0f35e6aabd46897e9b0185a67a566d65"
+  xmlHttp.overrideMimeType("application/json");
+  xmlHttp.open("GET", url, true);
+  xmlHttp.send(null);
+  var message = JSON.parse(xmlHttp.responseText);
+  var threeweeks = new Date();
+  threeweeks.setDate(threeweeks.getDate()-21);
+  for (var i = 0; i < message.length; i++) {
+    var currentmess = message[i];
+    var re = /(\d\d\d\d)-(\d\d)-(\d\d)/;
+    var result = re.exec(currentmess.transaction_date);
+    var depdate = new Date(result[1], (result[2]-1), result[3]);
+    if(depdate > threeweeks) {
+      dep += currentmess.amount
+    }
+  }
+  return dep;
 }
