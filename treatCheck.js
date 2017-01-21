@@ -6,12 +6,11 @@ var diffTime;
 
 
 function treatCheck() {
-  var info = document.getElementById("form");
-  id = getId(info.elements[0].value);
+  id = getId(document.getElementById("input-name").value);
   acc = getAccount(id);
 
   //Now we calculate how much the person needs to save
-  var rate = getRate(info);
+  var rate = getRate();
   //Now we need to check to see if they have been saving enough
   var dep = getMoneyRate(acc, "http://api.reimaginebanking.com/accounts/"+acc+"/deposits?key=0f35e6aabd46897e9b0185a67a566d65");
   var purch = getMoneyRate(acc, "http://api.reimaginebanking.com/accounts/"+acc+"/purchases?key=0f35e6aabd46897e9b0185a67a566d65");
@@ -20,9 +19,9 @@ function treatCheck() {
   var truerate = (dep-purch-withd)/3;
 
   if(truerate > rate) {
-    return "treat.html?need="+rate+"&goalM="+info.elements[2].value+"&goalD="+info.elements[3].value+"&tRate="+truerate;
+    document.location = "treat.html?need="+rate+"&goalM="+document.getElementById("input-money").value+"&goalD="+document.getElementById("input-date").value+"&tRate="+truerate;
   } else {
-    return "noTreat.html?need="+rate+"&goalM="+info.elements[2].value+"&goalD="+info.elements[3].value+"&tRate="+truerate;
+    document.location =  "noTreat.html?need="+rate+"&goalM="+document.getElementById("input-money").value+"&goalD="+document.getElementById("input-date").value+"&tRate="+truerate;
   }
 
   return false;
@@ -34,7 +33,7 @@ function getId(username) {
   xmlHttp.open("GET", "config.json",false);
   xmlHttp.send(null);
   var message = JSON.parse(xmlHttp.responseText);
-  return message.customers[username];
+  return message[0]["customers"][username];
 }
 
 function getAccount(id) {
@@ -44,16 +43,16 @@ function getAccount(id) {
   xmlHttp.open("GET", url, false);
   xmlHttp.send(null);
   var message = JSON.parse(xmlHttp.responseText);
-  var account = message.pop();
+  var account = message[0];
   balance = account.balance;
   return account._id;
 }
 
-function getRate(info) {
-  if (info.elements[2].value > balance) {
+function getRate() {
+  if (document.getElementById("input-money").value > balance) {
     //calculate home much time they have
     var re = /(\d\d)\/(\d\d)\/(\d\d\d\d)/;
-    var result = re.exec(info.elements[3].value);
+    var result = re.exec(document.getElementById("input-date").value);
     var goalDate = new Date(result[3], (result[1]-1), result[2]);
     var curDate = new Date();
     if (goalDate < curDate) {
@@ -63,7 +62,7 @@ function getRate(info) {
     //Find number of days before goal
     diffTime = Math.round(Math.abs((goalDate.getTime() - curDate.getTime())/(24*60*60*1000)));
     //Find rate you need to be saving money.
-    return (info.elements[2].value - balance)/(diffTime/7);
+    return (document.getElementById("input-money").value - balance)/(diffTime/7);
   }
   else {
     //You have too much money
