@@ -23,7 +23,7 @@ padding: 1em;
 
 #treat {
 background-image: url('images/treatBackground.jpg');
-text-align: center;
+align-content: center;
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
