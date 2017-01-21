@@ -16,7 +16,7 @@ padding: 1em;
 #check {
 background-image: url('images/background.jpg');
 background-repeat: no-repeat;
-background-size: 90%, 90%;
+background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
 }
@@ -36,7 +36,7 @@ padding: 1em;
 
 h1 {
 text-align: center;
-font-size: 750%;
+font-size: 500%;
 color: #3366ff;
 text-shadow: 1px 1px 0 #e1e1e1;
 }
