@@ -67,7 +67,7 @@ text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 margin: auto;
 }
 
-form {
+#form {
 max-width: 600px;
 text-align: center;
 margin: 20px auto;
@@ -93,7 +93,7 @@ p{
 color: #e74c3c;
 }
 
-form input, form textarea {
+div input, div textarea, div button {
 border: 0;
 outline: 0;
 padding: 1em;
@@ -111,18 +111,29 @@ resize: none;
 text-align: center;
 }
 
-form input:focus, form textarea:focus {
+div input:focus, form textarea:focus {
 -moz-box-shadow: 0 0px 2px #e74c3c !important;
 -webkit-box-shadow: 0 0px 2px #e74c3c !important;
 box-shadow: 0 0px 2px #e74c3c !important;
 }
 
-form #input-submit {
+div #input_submit {
 color: white;
 background: #e74c3c;
 cursor: pointer;
 }
-form #input-submit:hover {
+div #input_submit:hover {
+-moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+-webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+}
+
+div #input_create {
+color: white;
+background: #e74c3c;
+cursor: pointer;
+}
+div #input_create:hover {
 -moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
 -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
 box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
