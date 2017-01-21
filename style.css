@@ -8,7 +8,12 @@ box-sizing: border-box;
 }
 
 body {
-background-image: url('images/background.jpg');
+font-family: 'Merriweather', sans-serif;
+padding: 1em;
+}
+
+#check {
+    background-image: url('images/background.jpg');
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
