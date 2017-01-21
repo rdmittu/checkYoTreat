@@ -23,12 +23,12 @@ function QueryString() {
 
 function getNeed() {
   var qs = QueryString();
-  return qs.need;
+  return Math.round(qs.need);
 }
 
 function getGoalM() {
   var qs = QueryString();
-  return qs.goalM;
+  return Math.round(qs.goalM);
 }
 
 function getGoalD() {
@@ -38,5 +38,5 @@ function getGoalD() {
 
 function getRate() {
   var qs = QueryString();
-  return qs.tRate;
+  return Math.round(qs.tRate);
 }
