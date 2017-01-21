@@ -8,7 +8,7 @@ box-sizing: border-box;
 }
 
 body {
-text-align: center;  
+align-content: center;  
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
 }
