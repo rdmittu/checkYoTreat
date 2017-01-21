@@ -1,14 +1,13 @@
 <html>
     <link rel="stylesheet" type="text/css" href="/style.css">
-    <script>
-    </script>
+    <script src="message.js"></script>
     <h1>No Days of Treating for You!</h1>
     <br />
     <body id="noTreat">
         <img src = "/images/noTreat.gif" />
         <div class = "info">
-            <p>If you want to save up    by     , you will need save up    per week. <br>
-            You are saving an avrage of       per week; you do not deserve a treat.</p>
+          <p>If you want to save up <script>document.write(getGoalM());</script> by <script>document.write(getGoalD());</script>, you will need save up <script>document.write(getNeed());</script> per week. <br>
+          You are saving an average of <script>document.write(getRate());</script> per week; you do not deserve a treat.</p>
         </div>
     </body>
 </html>
