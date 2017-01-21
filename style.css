@@ -38,6 +38,15 @@ font-family: 'Merriweather', sans-serif;
 padding: 1em;
 }
 
+#create {
+background-image: url('images/createBackground.png');
+text-align: center;
+background-repeat: no-repeat;
+background-size: 100%, 100%;
+font-family: 'Merriweather', sans-serif;
+padding: 1em;
+}
+
 html{
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
