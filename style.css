@@ -29,6 +29,15 @@ font-family: 'Merriweather', sans-serif;
 padding: 1em;
 }
 
+#noTreat {
+background-image: url('images/noTreatBackground.jpg');
+text-align: center;
+background-repeat: no-repeat;
+background-size: 100%, 100%;
+font-family: 'Merriweather', sans-serif;
+padding: 1em;
+}
+
 html{
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
