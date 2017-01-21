@@ -8,7 +8,6 @@ box-sizing: border-box;
 }
 
 body {
-text-align: center;  
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
 }
@@ -22,7 +21,17 @@ padding: 1em;
 }
 
 #treat {
-    background-image: url('images/treatBackground.jpg');
+background-image: url('images/treatBackground.jpg');
+text-align: center;
+background-repeat: no-repeat;
+background-size: 100%, 100%;
+font-family: 'Merriweather', sans-serif;
+padding: 1em;
+}
+
+#noTreat {
+background-image: url('images/noTreatBackground.png');
+text-align: center;
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
@@ -46,6 +55,17 @@ max-width: 600px;
 text-align: center;
 margin: 20px auto;
 }
+
+.info{
+background-color: rgba(255, 255, 255, 0.6);
+width: fit-content;
+margin: auto;
+}
+
+p{
+color: #e74c3c;
+}
+
 form input, form textarea {
 border: 0;
 outline: 0;
