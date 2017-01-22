@@ -99,8 +99,8 @@ width: fit-content;
 color: white;
 background: #e74c3c;
 cursor: pointer;
-bottom: 0%;
-right: 0%;
+bottom: 5px;
+right: 5px;
 }
 
 .back:hover {
