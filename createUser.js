@@ -1,7 +1,15 @@
 function startProccess() {
   var id = customerPost();
-  add_id(id);
+  if (!id) {
+    return false;
+  }
+  if (!add_id(id)) {
+    return false;
+  }
   var acc = accountPost(id);
+  if (!acc) {
+    return false;
+  }
   depositPost(acc);
   withPost(acc);
 
@@ -12,9 +20,20 @@ function startProccess() {
 }
 
 function customerPost() {
+  var first = document.getElementById("first-name").value;
+  var last = document.getElementById("last-name").value;
+
+  if (first == "") {
+    alert("No first name entered");
+    return false;
+  } else if (last == "") {
+    alert("No last name entered");
+    return false;
+  }
+
   var data = {
-    "first_name": document.getElementById("first-name").value,
-    "last_name": document.getElementById("last-name").value,
+    "first_name": first,
+    "last_name": last,
     "address": { "street_number": "1234",
                 "street_name": "Test Street",
                 "city": "Hackerville",
@@ -30,15 +49,27 @@ function customerPost() {
 }
 
 function add_id(id) {
-  localStorage.setItem(document.getElementById("user-name").value, id);
+  var user = document.getElementById("user-name").value;
+  if (user != "") {
+    localStorage.setItem(user, id);
+    return true;
+  } else {
+    alert("No user name entered");
+    return false;
+  }
 }
 
 function accountPost(id) {
+  var bal = document.getElementById("input-bal").value;
+  if (bal == "") {
+    alert("No balance entered");
+    return false;
+  }
   var data = {
     "type": "Savings",
     "nickname": document.getElementById("user-name").value,
     "rewards": 0,
-    "balance": parseInt(document.getElementById("input-bal").value)
+    "balance": parseInt(bal)
   }
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("POST", "http://api.reimaginebanking.com/customers/"+id+"/accounts?key=0f35e6aabd46897e9b0185a67a566d65",false);
