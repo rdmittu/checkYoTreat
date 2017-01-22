@@ -78,6 +78,7 @@ user-select: none;
 }
 
 .info{
+font-size: 150%;
 background-color: rgba(255, 255, 255, 0.6);
 width: fit-content;
 margin: auto;
