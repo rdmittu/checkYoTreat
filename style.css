@@ -121,7 +121,7 @@ p{
 color: #e74c3c;
 }
 
-div input, div textarea, div button {
+div input, div textarea {
 border: 0;
 outline: 0;
 padding: 1em;
