@@ -9,9 +9,10 @@ function addInputD(divName){
      else {
           var newdiv = document.createElement('div');
           counterD++;
-          newdiv.innerHTML = " <br><input type='deposit' id='input-depD"+counterD+"' placeholder='Deposit Date "+counterD+"'>"
+          newdiv.innerHTML = " <br><input type='deposit' id='input-depD"+counterD+"' placeholder='Deposit Date "+counterD+" (YYYY-MM-DD)'>"
      +" <br><input type='deposit' id='input-depA"+counterD+"' placeholder='Deposit Amount "+counterD+"'>";
           document.getElementById(divName).appendChild(newdiv);
+          localStorage.setItem("counterD", counterD);
      }
 }
 
@@ -22,8 +23,9 @@ function addInputW(divName){
      else {
           var newdiv = document.createElement('div');
           counterW++;
-          newdiv.innerHTML = " <br><input type='withdraw' id='input-withD"+counterW+"' placeholder='Withdrawl Date "+counterW+"'>"
+          newdiv.innerHTML = " <br><input type='withdraw' id='input-withD"+counterW+"' placeholder='Withdrawl Date "+counterW+" (YYYY-MM-DD)'>"
      +" <br><input type='withdraw' id='input-withA"+counterW+"' placeholder='Withdrawl Amount "+counterW+"'>";
           document.getElementById(divName).appendChild(newdiv);
+          localStorage.setItem("counterW", counterW);
      }
 }

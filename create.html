@@ -2,37 +2,40 @@
     <head>
         <link rel="icon" href="/images/icon.ico" type="image/ico" />
         <link rel="stylesheet" type="text/css" href="/style.css">
+        <script src="addInput.js" language="Javascript" type="text/javascript"></script>
+        <script src="createUser.js" language="Javascript" type="text/javascript"></script>
         <title>Create</title>
     </head>
     <body id="create">
         <h1>Create</h1>
         <div class="cf" id="form">
-            <input type="username" id="input-name" placeholder="Username">
+            <input type="username" id="first-name" placeholder="First Name">
+            <input type="username" id="last-name" placeholder="Last Name">
+            <input type="username" id="user-name" placeholder="Username">
             <div class="half left cf">
                 <input type="password" id="input-pass" placeholder="Password">
             </div>
             <div class="half right cf">
                 <input type="confirmPassword" id="input-cPass" placeholder="Confirm Password">
             </div>
-            <input type="balance" id="input-bal0" placeholder="Balance">
+            <input type="balance" id="input-bal" placeholder="Balance">
             <br />
             <h3>Enter Past deposit/withdraws from last three months.</h3>
-            <script src="js/addInput.js" language="Javascript" type="text/javascript"></script>
             <div class="half left cf">
                 <div id="dynamicInputD">
-                    <br><input type="deposit" id="input-depD1" placeholder="Depostie Date 1">
+                    <br><input type="deposit" id="input-depD1" placeholder="Depostie Date 1 (YYYY-MM-DD)">
                     <br><input type="deposit" id="input-depA1" placeholder="Depostie Amount 1">
                 </div>
                 <input type="button" value="Add another deposit" onClick="addInputD('dynamicInputD');">
             </div>
             <div class="half right cf">
                 <div id="dynamicInputW">
-                    <br><input type="withdraw" id="input-withD1" placeholder="Wtihdraw Date 1">
+                    <br><input type="withdraw" id="input-withD1" placeholder="Wtihdraw Date 1 (YYYY-MM-DD)">
                     <br><input type="withdraw" id="input-withA1" placeholder="Wtihdraw Amount 1">
                 </div>
                 <input type="button" value="Add another withdrawl" onClick="addInputW('dynamicInputW');">
             </div>
-            <button id="input_account" onclick="">Create</button>
+            <button id="input_account" onclick="startProccess();">Create</button>
         </div>
         <button class="back" onclick="window.location.href='/index.html'">Back</button>
     </body>
