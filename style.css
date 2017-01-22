@@ -81,6 +81,7 @@ a {
 -ms-user-select: none;
 user-select: none;
  text-decoration: none;
+ z-index: 4;
 }
 
 .info{
