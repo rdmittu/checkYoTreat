@@ -9,7 +9,6 @@ box-sizing: border-box;
 
 body {
 font-family: 'Merriweather', sans-serif;
-padding: 1em;
 }
 
 #check {
@@ -17,7 +16,6 @@ background-image: url('images/background.jpg');
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
-padding: 1em;
 }
 
 #treat {
@@ -26,7 +24,6 @@ text-align: center;
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
-padding: 1em;
 }
 
 #noTreat {
@@ -35,7 +32,6 @@ text-align: center;
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
-padding: 1em;
 }
 
 #create {
@@ -44,7 +40,6 @@ text-align: center;
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
-padding: 1em;
 }
 
 html{
