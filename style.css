@@ -73,6 +73,10 @@ text-align: center;
 margin: 20px auto;
 }
 
+a {
+ text-decoration: none;
+}
+
 .info{
 background-color: rgba(255, 255, 255, 0.6);
 width: fit-content;
@@ -84,6 +88,12 @@ color: #e74c3c;
 }
 
 form input, form textarea {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 border: 0;
 outline: 0;
 padding: 1em;
@@ -99,7 +109,6 @@ font-family: 'Merriweather', sans-serif;
 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 resize: none;
 text-align: center;
-text-decoration: none;
 }
 
 form input:focus, form textarea:focus {
