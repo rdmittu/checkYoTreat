@@ -37,7 +37,7 @@ font-family: 'Merriweather', sans-serif;
 #create {
 background-image: url('images/createBackground.png');
 text-align: center;
-background-repeat: no-repeat;
+background-repeat: repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
 }
