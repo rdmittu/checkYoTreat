@@ -84,7 +84,7 @@ margin: auto;
 }
 
 .back {
-position: relative;
+position: fixed;
 border: 0;
 outline: 0;
 padding: 1em;
