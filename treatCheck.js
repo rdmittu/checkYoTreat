@@ -2,6 +2,7 @@ var curDepositAmount;
 var id;
 var acc;
 var balance = null;
+var diffTime;
 
 
 function treatCheck() {
@@ -19,9 +20,9 @@ function treatCheck() {
   var truerate = (dep-purch-withd)/3;
 
   if(truerate > rate) {
-    return "treat.html";
+    return "treat.html?need="+rate+"&goalM="+info.elements[2].value+"&goalD="+info.elements[2].value+"&tRate="+truerate;
   } else {
-    return "noTreat.html"
+    return "noTreat.html?need="+rate+"&goalM="+info.elements[2].value+"&goalD="+info.elements[2].value+"&tRate="+truerate;
   }
 
 
@@ -59,7 +60,7 @@ function getRate(info) {
       new Error();
     }
     //Find number of days before goal
-    var diffTime = Math.round(Math.abs((goalDate.getTime() - curDate.getTime())/(24*60*60*1000)));
+    diffTime = Math.round(Math.abs((goalDate.getTime() - curDate.getTime())/(24*60*60*1000)));
     //Find rate you need to be saving money.
     return (info.elements[2].value - balance)/(diffTime/7);
   }
