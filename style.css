@@ -10,8 +10,6 @@ box-sizing: border-box;
 body {
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
-width: 100%;
-height: 100%;
 }
 
 #check {
@@ -20,8 +18,6 @@ background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
-width: 100%;
-height: 100%;
 }
 
 #treat {
@@ -31,8 +27,6 @@ background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
-width: 100%;
-height: 100%;
 }
 
 #noTreat {
@@ -42,8 +36,6 @@ background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
-width: 100%;
-height: 100%;
 }
 
 #create {
@@ -53,8 +45,6 @@ background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
 padding: 1em;
-width: 100%;
-height: 100%;
 }
 
 html{
@@ -107,7 +97,6 @@ padding: 1em;
 -webkit-border-radius: 8px;
 border-radius: 8px;
 display: block;
-width: 100%;
 margin-top: 1em;
 font-family: 'Merriweather', sans-serif;
 -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
