@@ -117,7 +117,7 @@ form input:focus, form textarea:focus {
 box-shadow: 0 0px 2px #e74c3c !important;
 }
 
-form #input-submit {
+div #input-submit {
 color: white;
 background: #e74c3c;
 cursor: pointer;
