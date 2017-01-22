@@ -121,7 +121,7 @@ p{
 color: #e74c3c;
 }
 
-div input, div textarea {
+div input, div textarea, #input_submit, #input_create, #input_account {
 border: 0;
 outline: 0;
 padding: 1em;
