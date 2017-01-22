@@ -93,7 +93,7 @@ p{
 color: #e74c3c;
 }
 
-form input, form textarea {
+div input, form textarea {
 border: 0;
 outline: 0;
 padding: 1em;
