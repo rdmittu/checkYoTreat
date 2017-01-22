@@ -102,7 +102,7 @@ color: white;
 background: #e74c3c;
 cursor: pointer;
 bottom: 5px;
-right: 5px;
+left: 5px;
 }
 
 .back:hover {
