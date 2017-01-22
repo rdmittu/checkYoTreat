@@ -30,9 +30,9 @@ function treatCheck() {
   var truerate = (dep-purch-withd)/3;
 
   if(truerate > rate) {
-    document.location = "treat.html?need="+rate+"&goalM="+document.getElementById("input-money").value+"&goalD="+document.getElementById("input-date").value+"&tRate="+truerate;
+    document.location = "treat.html?need="+rate+"&goalM="+document.getElementById("input-money").value+"&goalD="+document.getElementById("input-date").value+"&tRate="+truerate+"&bal="+balance;
   } else {
-    document.location =  "noTreat.html?need="+rate+"&goalM="+document.getElementById("input-money").value+"&goalD="+document.getElementById("input-date").value+"&tRate="+truerate;
+    document.location =  "noTreat.html?need="+rate+"&goalM="+document.getElementById("input-money").value+"&goalD="+document.getElementById("input-date").value+"&tRate="+truerate+"&bal="+balance;
   }
 
   return false;

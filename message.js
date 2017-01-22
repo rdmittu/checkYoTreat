@@ -40,3 +40,8 @@ function getRate() {
   var qs = QueryString();
   return Math.round(qs.tRate);
 }
+
+function getBal() {
+  var qs = QueryString();
+  return Math.round(qs.bal);
+}
