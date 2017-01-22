@@ -93,7 +93,7 @@ p{
 color: #e74c3c;
 }
 
-form input, form textarea {
+form input, form textarea, form button {
 border: 0;
 outline: 0;
 padding: 1em;
@@ -111,7 +111,7 @@ resize: none;
 text-align: center;
 }
 
-form input:focus, form textarea:focus {
+form input:focus, form textarea:focus, form button:focus {
 -moz-box-shadow: 0 0px 2px #e74c3c !important;
 -webkit-box-shadow: 0 0px 2px #e74c3c !important;
 box-shadow: 0 0px 2px #e74c3c !important;
