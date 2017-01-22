@@ -14,16 +14,23 @@
             <div class="half right cf">
                 <input type="confirmPassword" id="input-cPass" placeholder="Confirm Password">
             </div>
-            <input type="balance" id="input-bal" placeholder="Balance">
+            <input type="balance" id="input-bal0" placeholder="Balance">
             <br />
             <h3>Enter Past deposit/withdraws from last three months.</h3>
+            <script src="js/addInput.js" language="Javascript" type="text/javascript"></script>
             <div class="half left cf">
-                <input type="deposit" id="input-depD" placeholder="Depostie Date">
-                <input type="deposit" id="input-depA" placeholder="Depostie Amount">
+                <div id="dynamicInputD">
+                    <br><input type="deposit" id="input-depD1" placeholder="Depostie Date 1">
+                    <br><input type="deposit" id="input-depA1" placeholder="Depostie Amount 1">
+                </div>
+                <input type="button" value="Add another text input" onClick="addInputD('dynamicInputD');">
             </div>
             <div class="half right cf">
-                <input type="withdraw" id="input-withD" placeholder="Wtihdraw Date">
-                <input type="withdraw" id="input-withA" placeholder="Wtihdraw Amount">
+                <div id="dynamicInputW">
+                    <br><input type="withdraw" id="input-withD1" placeholder="Wtihdraw Date 1">
+                    <br><input type="withdraw" id="input-withA1" placeholder="Wtihdraw Amount 1">
+                </div>
+                <input type="button" value="Add another text input" onClick="addInputW('dynamicInputW');">
             </div>
             <button id="input_account" onclick="">Create</button>
         </div>

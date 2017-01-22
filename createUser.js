@@ -1,6 +1,8 @@
 function startProccess() {
   //var id = customerPost();
-  add_id("akjjsajndwnfnwelkdm");
+  //add_id(id);
+  //var acc = accountpost(id);
+  
 }
 
 function customerPost() {
@@ -23,5 +25,19 @@ function customerPost() {
 
 function add_id(id) {
   localStorage.setItem(document.getElementById("user-name").value, id);
+}
 
+function accountPost(id) {
+  var data = {
+    "type": "Savings",
+    "nickname": document.getElementById("user-name").value,
+    "rewards": 0,
+    "balance": document.getElementById("input-bal").value
+  }
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("POST", "http://api.reimaginebanking.com/customers/"+id+"/accounts?key=0f35e6aabd46897e9b0185a67a566d65",false);
+  xmlHttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+  xmlHttp.send(JSON.stringify(data));
+  var message = JSON.parse(xmlHttp.responseText);
+  return message["objectCreated"]["_id"];
 }
