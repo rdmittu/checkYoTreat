@@ -74,6 +74,12 @@ margin: 20px auto;
 }
 
 a {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
  text-decoration: none;
 }
 
@@ -88,12 +94,6 @@ color: #e74c3c;
 }
 
 form input, form textarea {
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
 border: 0;
 outline: 0;
 padding: 1em;
