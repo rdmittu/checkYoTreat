@@ -117,12 +117,23 @@ form input:focus, form textarea:focus {
 box-shadow: 0 0px 2px #e74c3c !important;
 }
 
-div #input-submit {
+form #input_submit {
 color: white;
 background: #e74c3c;
 cursor: pointer;
 }
-form #input-submit:hover {
+form #input_submit:hover {
+-moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+-webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+}
+
+form #input_create {
+color: white;
+background: #e74c3c;
+cursor: pointer;
+}
+form #input_create:hover {
 -moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
 -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
 box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
