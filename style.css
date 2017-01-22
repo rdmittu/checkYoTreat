@@ -90,7 +90,16 @@ margin: auto;
 }
 
 .back {
+width: fit-content;
+color: white;
+background: #e74c3c;
+cursor: pointer;
+}
 
+.back:hover {
+-moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+-webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
 }
 
 p{
