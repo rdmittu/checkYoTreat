@@ -5,6 +5,7 @@ var balance = null;
 var diffTime;
 
 
+
 function treatCheck() {
   id = getId(document.getElementById("input-name").value);
   acc = getAccount(id);
@@ -29,11 +30,7 @@ function treatCheck() {
 }
 
 function getId(username) {
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open("GET", "config.json",false);
-  xmlHttp.send(null);
-  var message = JSON.parse(xmlHttp.responseText);
-  return message[0]["customers"][username];
+  return localStorage.getItem(username);
 }
 
 function getAccount(id) {
