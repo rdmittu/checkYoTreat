@@ -9,7 +9,6 @@ box-sizing: border-box;
 
 body {
 font-family: 'Merriweather', sans-serif;
-padding: 1em;
 }
 
 #check {
@@ -17,7 +16,6 @@ background-image: url('images/background.jpg');
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
-padding: 1em;
 }
 
 #treat {
@@ -26,7 +24,6 @@ text-align: center;
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
-padding: 1em;
 }
 
 #noTreat {
@@ -35,7 +32,6 @@ text-align: center;
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
-padding: 1em;
 }
 
 #create {
@@ -44,12 +40,10 @@ text-align: center;
 background-repeat: no-repeat;
 background-size: 100%, 100%;
 font-family: 'Merriweather', sans-serif;
-padding: 1em;
 }
 
 html{
 font-family: 'Merriweather', sans-serif;
-padding: 1em;
 }
 
 h1 {
@@ -89,16 +83,14 @@ width: fit-content;
 margin: auto;
 }
 
-/*.back {
-position: relative;
+.back {
+position: fixed;
 border: 0;
 outline: 0;
 padding: 1em;
 -moz-border-radius: 8px;
 -webkit-border-radius: 8px;
 border-radius: 8px;
-display: block;
-margin-top: 1em;
 font-family: 'Merriweather', sans-serif;
 -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -109,7 +101,7 @@ background: #e74c3c;
 cursor: pointer;
 bottom: 5px;
 right: 5px;
-}*/
+}
 
 .back:hover {
 -moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
@@ -121,7 +113,7 @@ p{
 color: #e74c3c;
 }
 
-div input, div textarea, #input_submit, #input_create, #input_account {
+div input, div textarea, div button {
 border: 0;
 outline: 0;
 padding: 1em;
@@ -136,7 +128,6 @@ font-family: 'Merriweather', sans-serif;
 -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 resize: none;
-text-align: center;
 }
 
 div input:focus, form textarea:focus {

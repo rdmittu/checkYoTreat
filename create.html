@@ -1,32 +1,30 @@
 <html>
     <head>
+        <link rel="icon" href="/images/icon.ico" type="image/ico" />
         <link rel="stylesheet" type="text/css" href="/style.css">
-        <script src="js/node.js"></script>
-        <script src="js/r.js"></script>
-        <script src="js/fs.js"></script>
-        <script src="createUser.js"></script>
+        <title>Create</title>
     </head>
-    <h1>Sign Up</h1>
-    <div class="cf" id="form">
-        <button id="input_submit" onclick="startProccess();">Create User</button>
-        <input type="name" id="first-name" placeholder="First Name">
-        <input type="name" id="last-name" placeholder="Last Name">
-        <input type="username" id="user-name" placeholder="Username">
-        <div class="half left cf">
-            <input type="password" id="input-pass" placeholder="Password">
+    <body id="create">
+        <h1>Create</h1>
+        <div class="cf" id="form">
+            <input type="username" id="input-name" placeholder="Username">
+            <div class="half left cf">
+                <input type="password" id="input-pass" placeholder="Password">
+            </div>
+            <div class="half right cf">
+                <input type="confirmPassword" id="input-pass" placeholder="Confirm Password">
+            </div>
+            <input type="balance" id="input-bal" placeholder="Balance">
+            <br />
+            <h3>Enter Past deposit/withdraws from last three months.</h3>
+            <div class="half left cf">
+                <input type="deposit1" id="input-dep" placeholder="Depostie 1">
+            </div>
+            <div class="half right cf">
+                <input type="withdraw1" id="input-with" placeholder="Wtihdraw 1">
+            </div>
+            <button id="input_account" onclick="">Create</button>
         </div>
-        <div class="half right cf">
-            <input type="confirmPassword" id="input-pass" placeholder="Confirm Password">
-        </div>
-        <input type="balance" id="input-bal" placeholder="Balance">
-        <br />
-        <h3>Enter Past deposit/withdraws from last three months.</h3>
-        <div class="half left cf">
-            <input type="deposit1" id="input-dep" placeholder="Depostie 1">
-        </div>
-        <div class="half right cf">
-            <input type="withdraw1" id="input-with" placeholder="Wtihdraw 1">
-        </div>
-    </div>
-    <body id="create" />
+        <button class="back" onclick="window.location.href='/index.html'">Back</button>
+    </body>
 </html>
